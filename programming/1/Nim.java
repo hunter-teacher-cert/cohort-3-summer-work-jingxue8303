@@ -9,7 +9,7 @@ public class Nim{
     int stoneTaken = 0;
     int stoneRemain = stone - stoneTaken;
     
-    while (stoneRemain != 0){
+    while (stoneRemain > 0){
       Scanner input = new Scanner(System.in);
       System.out.print("Choose the number of stones you want to pick, from 1 to 3: ");
       int player = input.nextInt();
