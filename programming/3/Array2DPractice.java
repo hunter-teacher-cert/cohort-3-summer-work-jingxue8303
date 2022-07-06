@@ -150,7 +150,7 @@ public class Array2DPractice
     for (int i = Math.max(0, row - 1); i <= Math.min(row + 1, board.length - 1); i++) {
       for (int j = Math.max(0, col - 1); j <= Math.min(col + 1, board[i].length-1); j++) {
         if (! (i == row && j == col)){ //excludes the center
-          board[i][j] == 'X'
+          board[i][j] = 'X';
     
             
         }
@@ -223,7 +223,7 @@ public class Array2DPractice
      xxxRxx
      Note that the method has to stop at the bottom of the array.
   */
-  public static void downString( char[][] board, int row, int col, String word )
+  /*public static void downString( char[][] board, int row, int col, String word )
   {
     for (int i=0; i< board.length; i++){
       for (int j=0; j < board[0].length; j++){
@@ -241,7 +241,7 @@ public class Array2DPractice
       
     
   }
-
+  */
 
   public static void main( String[] args )
   {
@@ -250,11 +250,14 @@ public class Array2DPractice
     //setRow(b, 1, 'Q');
     //printBoard(b);
     //System.out.println();
-    //copyBoard(b);
-    //explodeSquare(b, 1, 1);
-    //printBoard(b);
-    downString (b, 2, 1, "hello");
+    copyBoard(b);
+    explodeSquare(b, 0, 0);
+    explodeSquare(b, 4, 4);
+    explodeSquare(b, 4, 2);
+    explodeSquare(b, 4, 3);
     printBoard(b);
+    //downString (b, 2, 1, "hello");
+    //printBoard(b);
   
     /*
       Note, you can directly set elements in the board
