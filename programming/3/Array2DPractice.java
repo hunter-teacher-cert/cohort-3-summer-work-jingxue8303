@@ -147,19 +147,18 @@ public class Array2DPractice
   */
   public static void explodeSquare( char[][] board, int row, int col)
   {
-    char center = board [row][col];
-    for (int i =0; i < board.length ;i++){
-      if (i<=row+1  && i>=row-1) {
-        for (int j =0; j < board[0].length; j++){
-          if (j<=col+1 && j >= col-1) {
-            board[i][j]= 'x';
+    for (int i = Math.max(0, row - 1); i <= Math.min(row + 1, board.length - 1); i++) {
+      for (int j = Math.max(0, col - 1); j <= Math.min(col + 1, board[i].length-1); j++) {
+        if (! (i == row && j == col)){ //excludes the center
+          board[i][j] == 'X'
+    
             
-          }
-          
         }
+          
       }
+      
     }
-    board[row][col]= center;  
+      
   }
 
   /**
