@@ -1,7 +1,7 @@
 /**
- * Recursion Practice with Strings by Room 10
+ * Recurrsion Practice by Room 10
  * Jing Xue
- * collaborators: First Last, First Last
+ * collaborators: Jihae, Alise, Elizabeth, Shana
  */
 
 public class Fence
@@ -15,21 +15,26 @@ public class Fence
      fenceR(1) -> "|"
      fenceR(2) -> "|--|"
   */
-  public static String fenceR( int n )
-  {
-    /* YOUR SIMPLE, SMART IMPLEMENTATION HERE */
+  public static String fenceR( int n ){
+    if ( n ==1) {
+      return "|";
+    }  else {
+        return fenceR(n-1)+ "--|";
+        }
+    
+      
   }
 
 
   public static void main( String[] args )
   {
 
-    for( int i = 0; i < 10; i++ ) {
+    for( int i = 1; i < 10; i++ ) { //not printing 0 post
       System.out.println( i + "-post fences: " );
       System.out.println( fenceR(i) );
     }
 
-    /* feel free to add extra tests... */
+    
 
   }
 }

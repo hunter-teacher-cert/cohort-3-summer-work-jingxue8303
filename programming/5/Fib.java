@@ -1,5 +1,5 @@
 /**
- * Array2DPractice by Room 10
+ * Recurrsion Practice by Room 10
  * Jing Xue
  * collaborators: Jihae, Alise, Elizabeth, Shana 
  */
@@ -17,9 +17,9 @@ public class Fib{
 
   public static void main( String[] args )
   { 
-
     
-      /*System.out.println( fib(0) ); // -> 0
+    
+      System.out.println( fib(0) ); // -> 0
       System.out.println( fib(1) ); // -> 1
       System.out.println( fib(2) ); // -> 1
       System.out.println( fib(3) ); // -> 2
@@ -29,7 +29,7 @@ public class Fib{
       System.out.println( fib(10) ); // -> 55
       System.out.println( fib(20) ); // -> 6765
       System.out.println( fib(40) ); // -> 102334155
-      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+      
 
   }//end main()
 
