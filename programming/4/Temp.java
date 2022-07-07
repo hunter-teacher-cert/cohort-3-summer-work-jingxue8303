@@ -6,3 +6,9 @@ import java.util.*;
  * Jing Xue
  * collaborators: Jihae, Alise, Elizabeth, Shana 
  */
+
+public class Temp{
+  public static void main (String [] args){
+    System.out.println("Hello");
+  }
+} 

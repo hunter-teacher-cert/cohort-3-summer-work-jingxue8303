@@ -157,7 +157,7 @@ public class Array2DPractice
           
     }
     
-    
+    // adjcent centers are not working.
     
   }
 
@@ -184,7 +184,7 @@ public class Array2DPractice
           explodeSquare(board, i, j);
         } 
       }
-    }  
+    }  //adjcent centers are not working
   }
 
 
