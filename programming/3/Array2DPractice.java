@@ -147,18 +147,18 @@ public class Array2DPractice
   */
   public static void explodeSquare( char[][] board, int row, int col)
   {
-    for (int i = Math.max(0, row - 1); i <= Math.min(row + 1, board.length - 1); i++) {
-      for (int j = Math.max(0, col - 1); j <= Math.min(col + 1, board[i].length-1); j++) {
-        if (! (i == row && j == col)){ //excludes the center
-          board[i][j] = 'X';
+    char temp = board [row][col];
+    for (int i = Math.max(0, row - 1); i <= Math.min(row + 1, (board.length - 1)); i++) {
+      for (int j = Math.max(0, col - 1); j <= Math.min(col + 1, (board[i].length-1)); j++) {
+        board[i][j] = 'X';
     
             
-        }
+        
           
       }
       
     }
-      
+    board [row][col] = temp;  
   }
 
   /**
@@ -181,10 +181,11 @@ public class Array2DPractice
     for (int i =0; i < board.length; i++){
       for (int j = 0; j < board[0].length; j++){
         if (board[i][j]== c) {
+          
           explodeSquare(board, i, j);
         } 
       }
-    }  /* YOUR AWESOME CODE HERE */
+    }  
   }
 
 
@@ -223,41 +224,45 @@ public class Array2DPractice
      xxxRxx
      Note that the method has to stop at the bottom of the array.
   */
-  /*public static void downString( char[][] board, int row, int col, String word )
+  public static void downString( char[][] board, int row, int col, String word )
   {
-    for (int i=0; i< board.length; i++){
-      for (int j=0; j < board[0].length; j++){
-        if (){
-          for (int k =0; k <word.length(); k++){
-            board[row][col] = word.charAt(k);
-            row ++;
-          }
-          break;
-        }
+    //int i = row; 
+    //int j = col;
+    int k = 0;
+    for (int i =row; i <= board.length-1; i++){
+      if (k < word.length()) {
+        board[i][col] = word.charAt(k);
+        k++;    
+    
       }
-    }
+    }    
+    
+  }
+
     
         
       
     
-  }
-  */
+  
+  
 
   public static void main( String[] args )
   {
-    char[][] b = buildBoard(5,5,'z');
+    char[][] b = buildBoard(6,6,'z');
     
     //setRow(b, 1, 'Q');
-    //printBoard(b);
-    //System.out.println();
-    copyBoard(b);
-    explodeSquare(b, 0, 0);
-    explodeSquare(b, 4, 4);
-    explodeSquare(b, 4, 2);
-    explodeSquare(b, 4, 3);
     printBoard(b);
-    //downString (b, 2, 1, "hello");
+    System.out.println();
+    //System.out.println();
+    //copyBoard(b);
+    //explodeSquare(b, 0, 0);
+    explodeSquare(b, 4, 4);
+    explodeSquare(b, 4, 3);
+    //explodeSquare(b, 3, 2);
     //printBoard(b);
+    //downString (b, 1, 1, "hello");
+    //downString (b,4,3,"World");
+    printBoard(b);
   
     /*
       Note, you can directly set elements in the board
