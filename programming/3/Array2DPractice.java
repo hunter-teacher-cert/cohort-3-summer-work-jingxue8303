@@ -147,18 +147,18 @@ public class Array2DPractice
   */
   public static void explodeSquare( char[][] board, int row, int col)
   {
-    char temp = board [row][col];
     for (int i = Math.max(0, row - 1); i <= Math.min(row + 1, (board.length - 1)); i++) {
       for (int j = Math.max(0, col - 1); j <= Math.min(col + 1, (board[i].length-1)); j++) {
-        board[i][j] = 'X';
-    
-            
+        if (!(j == col && i == row )){
+          board[i][j] = 'X';
+        }
+      }      
         
           
-      }
-      
     }
-    board [row][col] = temp;  
+    
+    
+    
   }
 
   /**
@@ -181,7 +181,6 @@ public class Array2DPractice
     for (int i =0; i < board.length; i++){
       for (int j = 0; j < board[0].length; j++){
         if (board[i][j]== c) {
-          
           explodeSquare(board, i, j);
         } 
       }
@@ -230,7 +229,7 @@ public class Array2DPractice
     //int j = col;
     int k = 0;
     for (int i =row; i <= board.length-1; i++){
-      if (k < word.length()) {
+      if (k < word.length()) {    // solved out of bound issue because of *235
         board[i][col] = word.charAt(k);
         k++;    
     
@@ -256,8 +255,8 @@ public class Array2DPractice
     //System.out.println();
     //copyBoard(b);
     //explodeSquare(b, 0, 0);
+    explodeSquare(b, 4, 5);
     explodeSquare(b, 4, 4);
-    explodeSquare(b, 4, 3);
     //explodeSquare(b, 3, 2);
     //printBoard(b);
     //downString (b, 1, 1, "hello");
