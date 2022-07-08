@@ -23,11 +23,20 @@ public class Driver {
     public static void main(String[] args) {
     
 	//declare a var of appropriate type to assign an instance of Time to
-	    Time t = new Time();
-      t.toString();
-      System.out.println(t);
-	//assign var the address of a newly-apportioned Time object
-	    t = new Time();
+	    Time t = new Time(9,31,40);
+      System.out.println("t is " + t.toString()); //println accepts strings only
+
+      Time t1 = new Time();
+      System.out.println("t is " + t1.toString());
+
+      //since we cannot have a void method inside of print method, we should have a separate t.add(t2) to update t, before the print method. 
+      Time t2 = new Time(2,4,5);
+      t.add(t2);
+      System.out.println("the sume of t and t2 is " + t.toString());
+      
+      boolean result = t.equals(t2);
+      System.out.println(result);
+      
     }//end main()
 
 }//end class

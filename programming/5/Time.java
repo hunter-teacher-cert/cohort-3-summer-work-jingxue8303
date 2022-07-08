@@ -35,9 +35,9 @@ public class Time {
     // You can change this if you want to use the alternate
     // implementation of just storing the overall seconds.
     
-    int hours;
-    int minutes;
-    int seconds;
+    private int hours;
+    private int minutes;
+    private int seconds;
 
     // Constructors
     public Time(){
@@ -54,9 +54,9 @@ public class Time {
        
      */
     public Time(int hrs, int mins, int secs){
-      hours= hrs;
-      minutes = mins;
-      seconds = secs;
+      this.hours= hrs;
+      this.minutes = mins;
+      this.seconds = secs;
 	
 	
     }
@@ -68,7 +68,10 @@ public class Time {
        returns a string representation of the time
     */
     public String toString(){
-	    return ( hours + " : " + minutes + " : " + seconds);
+	     
+      String time = ( hours + " : " + minutes + " : " + seconds);
+      //System.out.println (time);
+      return time;
     }
 
 
@@ -80,8 +83,11 @@ public class Time {
        modifies this instance to represent the time hrs:mins:secs
     */
     public void set(int hrs, int mins, int secs){
-	// add the code to add the time represented by other
-	// to this instance.
+	    this.hours = hrs;
+      this.minutes = mins;
+      this.seconds = secs;
+    // add the code to add the time represented by other
+	  // to this instance.
 
     }
 
@@ -94,8 +100,11 @@ public class Time {
        the time other.
     */
     public void add(Time other){
-	// add the code to add the time represented by other
-	// to this instance.
+	    this.hours = this.hours + other. hours;
+      this.minutes = this.minutes +other. minutes;
+      this.seconds = this.seconds + other.seconds; 
+        // add the code to add the time represented by other
+	  // to this instance.
 
     }
 
@@ -108,9 +117,11 @@ public class Time {
        false otherwise.
     */
     public boolean equals(Time other){
-	// your code here)
-
-	return false; // change this
+	    if(this.hours == other.hours && 
+         this.minutes == other.minutes &&
+         this.seconds == other.seconds){
+        return true;
+         } else return false; 
     }
 
     /**
