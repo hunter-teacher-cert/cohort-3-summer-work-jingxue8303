@@ -135,9 +135,20 @@ public class Time {
        0 if the two instances represent the same time.
     */
     public int compareTo(Time other){
-	// your code here)
+	    int secondSum1 = this.hours * 3600 + this.minutes * 60 + this.seconds; 
+      int secondSum2 = other.hours * 3600 + other.minutes * 60 + other.seconds;
+      int diff = secondSum1 - secondSum2;
+      if (diff == 0) {
+        return 0; 
+      } else {
+          if (diff >0){
+            return 1;
+          } else {
+              return -1;
+            }
+        }
 
-	return 0; // change this
+	     
     }
     
 
