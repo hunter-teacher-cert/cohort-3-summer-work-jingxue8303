@@ -28,6 +28,7 @@ public class Driver {
 
       Time t1 = new Time();
       System.out.println("t1 is " + t1.toString());
+      Time t3 = new Time();
 
       //since we cannot have a void method inside of print method, we should have a separate t.add(t2) to update t, before the print method. 
       Time t2 = new Time(10,4,5);
@@ -37,9 +38,11 @@ public class Driver {
       boolean result1 = t.equals(t2);
       System.out.println(result1);
 
-      int result2 = t.compareTo(t2);
+      int result2 = t1.compareTo(t2);     //Compare Time t1(empty) with t2; Expect -1
       System.out.println(result2);
-      
+
+      int result3 = t1.compareTo(t3);     //Compare Time t1(empty) with t3(empty); Expect 0
+      System.out.println(result3);
     }//end main()
 
 }//end class
