@@ -75,9 +75,13 @@ public class AlPractice{
   - No other values should be modified.
   */
   public static void swapElements(ArrayList<Integer> dataList, int index1,int index2){
-  int temp = dataList.get(index2);
-  //set(dataList, index2) = dataList.get(index1);
-  //set(dataList, index1) = temp;
+    int temp1 = dataList.get(index1);
+    int temp2 = dataList.get(index2);
+    dataList.add(index1, temp2 );
+    dataList.remove(index1+1);
+    dataList.add(index2, temp1);
+    dataList.remove(index2+1);
+  
   
   }
 
@@ -89,7 +93,11 @@ public class AlPractice{
   - The dataList is modified such that all occurances of valueToRemove are removed.
   */
   public static void removeValue(ArrayList<Integer> dataList, int valueToRemove){
-
+    for (int i = 0; i < dataList.size(); i++){
+      if (dataList.get(i)== valueToRemove) {
+        dataList.remove(i);
+      }
+    }
   }
 
 
@@ -135,19 +143,19 @@ public class AlPractice{
     System.out.println(sumOfList(al));
 
     // Uncomment these to test swapElements
-    swapElements(al,2,6);
+    swapElements(al,2,9);
     System.out.println(al);
 
     // Uncomment these to test removeValue
-    // al.add(5);
-    // al.add(10);
-    // al.add(5);
-    // al.add(13);
-    // al.set(2,5);
-    // al.set(3,5);
-    // System.out.println(a);
-    // removeValue(al,5);
-    // System.out.println(a);
+    al.add(5);
+    al.add(10);
+    al.add(5);
+    al.add(13);
+    al.set(2,5);
+    al.set(3,5);
+    System.out.println(al);
+    removeValue(al,5);
+    System.out.println(al);
 
   }
 
