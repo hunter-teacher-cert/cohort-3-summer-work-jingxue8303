@@ -77,10 +77,12 @@ public class AlPractice{
   public static void swapElements(ArrayList<Integer> dataList, int index1,int index2){
     int temp1 = dataList.get(index1);
     int temp2 = dataList.get(index2);
-    dataList.add(index1, temp2 );
+    dataList.set(index1, temp2);
+    dataList.set(index2, temp1);
+    /*dataList.add(index1, temp2 );
     dataList.remove(index1+1);
     dataList.add(index2, temp1);
-    dataList.remove(index2+1);
+    dataList.remove(index2+1);*/ //would work as well
   
   
   }
@@ -93,7 +95,8 @@ public class AlPractice{
   - The dataList is modified such that all occurances of valueToRemove are removed.
   */
   public static void removeValue(ArrayList<Integer> dataList, int valueToRemove){
-    for (int i = 0; i < dataList.size(); i++){
+    for (int i = dataList.size()-1; i >= 0; i--){
+        // (int i =0; i<dataList.size; i++) wouldn't remove the consecutive occurances because the index numbers all got pushed to the left one )
       if (dataList.get(i)== valueToRemove) {
         dataList.remove(i);
       }
