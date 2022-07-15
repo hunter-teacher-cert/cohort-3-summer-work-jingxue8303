@@ -43,8 +43,18 @@ public class LinkedList{
   Returns the String in the node at location index.
   */
   public String get(int index){
-    
-    return "";
+    String s= "null";
+    int count = 0;
+    Node walker = head;
+    while (walker != null){
+      if (count == index){
+        s = walker.getData();
+        break;
+      }
+      count ++;
+      walker = walker.getNext();
+    }
+    return s;
   }
 
   /**
