@@ -118,7 +118,7 @@ public class LinkedList{
     if (index == 0){
       head = n;
        
-    while (count >0 && count < size()){
+    while (count >0 && count < size()-1){
       if (count == index-1){
       n.setNext(walker.getNext());
       walker.setNext(n);
