@@ -55,6 +55,17 @@ public class LinkedList{
       walker = walker.getNext();
     }
     return s;
+    /*
+    int i = 0;
+    Node walker = head;
+    while (walker != null){
+      if (i== index){
+        break;
+      } 
+    walker=walker.getNext();
+    i++;    
+    }
+    return walker.getData(); //another method */
   }
 
   /**
@@ -76,7 +87,13 @@ public class LinkedList{
   returns the number of elements in the list
   */
   public int size(){
-    return 0;
+    int count = 0;
+    Node walker = head;
+    while (walker != null){
+      count ++;
+      walker = walker.getNext();
+    }
+    return count;
   }
 
 
@@ -93,11 +110,28 @@ public class LinkedList{
   "a"-> "z" -> "b" -> "c" -> "d"
   */
   public void add(int index, String value){
+    Node n = new Node (value);
+    int count = 0;
+    Node walker = head;
+    if (index < 0 || index>size()){
+        System.out.println("Invalid input");
+    if (index == 0){
+      head = n;
+       
+    while (count >0 && count < size()){
+      if (count == index-1){
+      n.setNext(walker.getNext());
+      walker.setNext(n);
+      }
+      count ++;
+      walker = walker.getNext();
+    }
+          
+     
 
   }
 
-
-  /**
+  /*
   Returns the index (location) of the first node in the list
   that contains value.
   Example:
