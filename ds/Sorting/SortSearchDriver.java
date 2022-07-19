@@ -9,8 +9,8 @@ public class SortSearchDriver {
 	
 	  SortSearch ss = new SortSearch(20);
 	  System.out.println(ss);
-	  //ss.swap(0,19); //check swap method;
-		//System.out.println(ss); //check swap method
+	  //ss.swap(0,19); //checking swap method;
+		//System.out.println(ss); //checking swap method
 	// Uncomment these to test part 2
 
 	int i;
