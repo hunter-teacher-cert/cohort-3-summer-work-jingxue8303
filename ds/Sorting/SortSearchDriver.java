@@ -9,8 +9,8 @@ public class SortSearchDriver {
 	
 	  SortSearch ss = new SortSearch(20);
 	  System.out.println(ss);
-	
-		
+	  //ss.swap(0,19); //check swap method;
+		//System.out.println(ss); //check swap method
 	// Uncomment these to test part 2
 
 	int i;
@@ -22,11 +22,12 @@ public class SortSearchDriver {
 
   i = ss.findSmallestIndex(10);  // begin at indicated index
 	System.out.println("Starting at 10: ss["+ i + "] = "+ss.get(i)+" : " + ss);
+  
 	// three different test to determine accuracy - works
 	// Uncomment these to test part 3
 
-	// System.out.println(ss);
-	// ss.sort();
-	// System.out.println(ss);
+	System.out.println(ss);
+	ss.sort();
+	System.out.println(ss);
   }
 }

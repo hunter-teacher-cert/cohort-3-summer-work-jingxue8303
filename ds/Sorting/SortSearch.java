@@ -55,9 +55,19 @@ public class SortSearch{
   public int get(int index){
 	  return this.data.get(index);
   }
+
+  
+  
+  public ArrayList <Integer> swap(int a, int b){
+    int temp1 = data.get(a);
+    int temp2 = data.get(b);
+    data.set(a,temp2);
+    data.set(b,temp1);
+    return data;
+  }
     
-
-
+    
+  
   /*
   return the index of the smallest data idem from index start to the end
   of the ArrayList. If there are multiple of the smallest value,
@@ -95,6 +105,11 @@ public class SortSearch{
 	  to the end of the array and swap it with that index. 
     */
     public void sort(){
+      for (int i =0; i <data.size()-1;i++){
+        int start = i;
+        int indexMin = findSmallestIndex(i);
+        swap(start, indexMin);
+      }
       // start at index of 1, track index and index -1 for compairson
 
       // FOR each thing in the AL
