@@ -15,5 +15,15 @@ public class Driver{
     System.out.println(l.get(2)); //testing
     System.out.println(l.get(3)); //testing out of bound
     System.out.println(l.size());
+    l.add(1,"wait");
+    System.out.println(l);// testing adding at middle
+    l.add(0,"wait");
+    System.out.println(l); //testing adding at 0
+    l.add(5,"wait");
+    System.out.println(l); //testing adding at the end
+    int i = l.indexOf("World");
+    System.out.println(i);
+    l.toArray();
+    
   }
 }

@@ -111,21 +111,24 @@ public class LinkedList{
   */
   public void add(int index, String value){
     Node n = new Node (value);
-    int count = 0;
-    Node walker = head;
+    
+    
     if (index < 0 || index>size()){
         System.out.println("Invalid input");
-    if (index == 0){
-      head = n;
-       
-    while (count >0 && count < size()-1){
-      if (count == index-1){
+    }
+    else if (index == 0){
+      add(value);
+    }
+    else {
+      Node walker = head;
+      for (int i=0; i < index-1; i++){
+        walker = walker. getNext();
+        
+      }
       n.setNext(walker.getNext());
       walker.setNext(n);
-      }
-      count ++;
-      walker = walker.getNext();
     }
+    
           
      
 
@@ -140,7 +143,16 @@ public class LinkedList{
   indexOf("d") would return 3 since "d" is at location 3.
   */
   public int indexOf(String value){
-    return 0;
+    Node walker = head;
+    int count =0;
+    while (walker != null){
+      if (walker.getData() == value){
+        return count;
+      }
+      walker = walker.getNext();
+      count ++;
+    }
+    return -1;
   }
 
 
@@ -151,9 +163,21 @@ public class LinkedList{
   the array.
   */
   public String[] toArray(){
-    return null;
+    String [] s = new String [size()];
+    Node walker = head;
+    for (int i= 0; i < s.length; i++){
+      s[i]= walker.getData();
+      walker = walker.getNext();
+    }
+    return s;
   }
 
+  /*public static void printArray(String []a){
+    String s = "";
+    for (int i =0; i < a.length; i++)
+      s = s + a[i];
+      System.out.println(s + " ");
+  }*/
 
 
   /**
