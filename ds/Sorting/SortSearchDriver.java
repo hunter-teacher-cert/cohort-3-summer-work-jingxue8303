@@ -29,5 +29,20 @@ public class SortSearchDriver {
 	System.out.println(ss);
 	ss.sort();
 	System.out.println(ss);
+  
+  System.out.println(ss.linearSearch(7)); //testing linear search
+
+  System.out.println("------------------bin1 test------------------");
+  System.out.println(ss);
+  System.out.println(ss.binarySearch(0));
+  System.out.println(ss.binarySearch(15));
+  System.out.println(ss.binarySearch(21));
+    // using 3 test cases to check for out of bounds values
+  System.out.println("------------------bin2 test------------------");
+  System.out.println(ss);
+  System.out.println(ss.binarySearchRecursive(0,5,10));
+  System.out.println(ss.binarySearchRecursive(7,1,18));
+  System.out.println(ss.binarySearchRecursive(19,10,15));
+  
   }
 }
