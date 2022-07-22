@@ -45,20 +45,20 @@ public class brickwallAnswer {
       return row + halfbrick;
     }
       //Create a method that alternately stack the two types of row 
-  public static String wall(int rowsTall, int brickwide){
-    String s = "";
-    String r = "";
-    for(int i = 0; i < rowsTall; i++){
-      if (i % 2 ==0) {
-        r = fullRow(brickwide) ;
+  public static String wall(int rowsTall, int brickwidth){
+    String output = "";
+    
+    for(int i = 0; i<rowsTall; i++){
+      if (i%2==0){
+        output = output + otherRow(brickwidth) +"\n";
       } else {
-          r = otherRow(brickwide);
+          output = output + fullRow(brickwidth) + "\n";
         }
-      s = s + r ;
       
     }
-    return s;
-  }  
+    return output;
+    
+  } 
       
       
 
